@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ES 2015 Notes : )</title>
+</head>
+<body>
+
+<h1>Level One</h1>
+<h2>Using Let</h2>
+<ul>
+<li> Prior to executing our code, JavaScript moves <em>var</em> declarations all the way up to the top of the scope. This is known as <b>hoisting</b>. 	
+
+<li><em>let</em> variables are scoped to the nearest <b>block</b> and are <b>NOT HOISTED</b>. (A block is any code section within <b>curly braces</b>, like <em>if, else, for, while,</em>, etc)
+<li> Use <em>let</em>, variables are "trapped" inside their respective <em>if</em> and <em>else</em> blocks.touch 
+</ul>
+
+
+<h2>1.4 using let in for loops</h2>
+
+<ul>
+<li> <em>var</em> is the reason behind a popular "gotcha" in <em>for</em> loops.
+<li> With <em>let</em>, there's <b>no sharing</b> in <em>for</em> loops. A new variable is created on each iteration.
+<li> Variables declared with <em> let</em> can be reassigned, but cannot be <b>redeclared</b> within the same scope.
+	
+</ul>
+
+<h2>1.9 Using const</h2>
+<ul>
+<li> <b>Magic Numbers</b> - a magic numners is a literal value with a clear meaning. 
+<li> When used multiple times, magic numbers introduce <b>unnecassary duplication</b>, which can lead to <b>bad code</b>!
+<li> The <em>const</em> keyword creates <b>read-only</b> named constants.
+<li> Once assigned, constants <b>cannot</b> be assigned a new value. 
+<li> Variables declared with <em>const</em> are scoped to the nearest block. 
+<li> In most cases, <em>let</em> and <em>const</em> will behave very similarly. Consider the semantics when choosing one over the other. 
+<li> Use <b>let</b> when variables could be reassigned new values.
+<li> Use <b>const</b> when new variables are not expected to be reassigned new values.
+</ul>
+
+<h1>Level Two</h1>
+<h2>2.0 Function Defaults</h2>
+<ul>
+<li> A common practice is to <b>check for presence</b> of arguments as the very first thing in the function.
+<li> Default parameter values help move <b>default values</b> from the function body to the function signature.
+<li> <b>The Options Object</b> - the options object is a widely used pattern that allows user-defined settings to be passed to a function in the form of properties on an object.
+<li> <b>Using Named Parameters</b> - Using named parameters for optional settings makes it easier to understand how a function should be invoked. 
+<li> It's <b>NOT okay</b> to omit the options argument altogether when invoking a function with named parameters when no default value is set for them. 	
+
+</ul>
+
+<h2>2.7 Rest Params, Spread Op, Arrow Func</h2>
+<ul>
+<li><b>Variadic functions</b> can take in any number of arguments
+<li> The <em>arguments</em> object is a built-in, Array-like object that corresponds to the arguments of a function. Here's why relying on this object to read arguments is <b>not ideal.</b>
+<li> The new <em>rest parameter</em> syntax allows us to represent an indefinite number of arguments as an Array. This way, changes to function signature are <b>less likeley to break code</b>.
+<li> The spread operator allows us to <b>split an Array</b> argument into <b>individual elements</b>.
+<li> <b>Rest and Spread look the same</b>Rest parameters and the spread operator <b>look the same</b>, but the former is used in function <b>definitions</b> and the later in function <b>invocations</b>.
+<li><b>From functions to Objects</b> - JavaScript objects can help use with the <b>encapsulation, organization</b>, and <b>testability</b> of our code. 
+<li> The <em>TagComponent</em> object <b>encapsulates</b> the code for fetching tags and adding them to a page.
+<li> Anonymos functions passed as callback to other functions create <b>their own scope</b>.
+<li> Arrow functions bind to the scope of where they are <b>defined</b>, not where they are used. (also knows as <b>lexical binding</b>)
+</ul>
+
+</body>
+</html>
