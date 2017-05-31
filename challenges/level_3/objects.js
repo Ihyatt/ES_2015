@@ -100,4 +100,80 @@ function buildTopicElement(topic){
 
   return { title, author, body };
 
+// 3.10 Merging Properties
+// Given the following objects:
+
+let defaults = {
+  container:       ".main",
+  isActiveClass:   ".is-active"
+};
+
+let options1 = {
+  container:       ".main-container",
+  isActiveClass:   ".is-active-element"
+};
+
+let options2 = {
+  isActiveClass:   ".is-active-content"
+};
+// What will be the resulting object assigned to the settings variable when we merge them using Object.assign, 
+// like so:
+let settings = Object.assign({}, defaults, options1, options2);
+// Answer: 
+
+{ container: '.main-container', isActiveClass: '.is-active-content' }
+
+
+// 3.11 Merging Options With Defaults 
+// Complete the following code so that the options object passed as an argument to the spinner() function is 
+// properly merged with the defaults object. It's important that neither of these 2 objects is mutated.
+
+function spinner(target, options = {}){
+
+  let defaults = {
+    message: "Please wait",
+    spinningSpeed: 5,
+    cssClass: ".is-spinning"
+  };
+
+  let settings = Object.assign(
+    %text: blank1% ,
+    %text: blank2% ,
+    %text: blank3%
+  );
+
+  if(settings.spinningSpeed !== defaults.spinningSpeed){
+    settings.cssClass = _addSpeedClass(target);
+  }
+
+  _renderSpinner(target, settings);
+}
+
+// 3.12 Merge Output 
+// Given the spinner() function below:
+
+function spinner(target, options = {}) {
+  let defaults = {
+    message: "Please wait",
+    spinningSpeed: 5,
+    cssClass: ".is-spinning"
+  };
+
+  let settings = Object.assign({} , defaults , options);
+
+  console.log(`Message: ${settings.message}`);
+  console.log(`spinningSpeed: ${settings.spinningSpeed}`);
+  console.log(`cssClass: ${settings.cssClass}`);
+}
+// Indicate the outcome of invoking this function, like so:
+
+spinner(targetElement, {
+  cssClass: ".is-fast-spinning", 
+  spinningSpeed: 8 
+});
+// Answer 
+Message: Please wait
+spinningSpeed: 8
+cssClass: .is-fast-spinning
+
 
