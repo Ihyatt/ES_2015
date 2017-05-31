@@ -86,4 +86,15 @@
 *   Working with WeakMaps --> all available methods on a _WeakMap_ require access to an **object used as a key**.
 *   WeakMaps are better with memory --> Individual entries in a _WeakMap_ can be **garbage collected** while the _WeakMap_ itself still exists.
 
+# Level Five
+
+### 4.17 Sets
+
+*	Limitations w/Arays --> Arrays don't enforce uniqueness of items. Duplicate entries are allowed
+*	Using Set --> The _Set_ object stores ***unique** values of **any type**, whether primitive values or object references
+*	Using Set as Enumberable Object --> _Set_ objects are ***iterable**, which means they can be used with _for..of_ and destucturing.
+* 	WeakSet --> The _WeakSet_ is a type of _Set_ where ***only objects** are allowed to be stored.
+*	Can't Read From a WeakSet --> _WeakSets_ **cannot** be used with _for..of_ and they offer **no** methods for reading values from it. 
+*	Using WeakSets to Show Unread Posts --> We want to add a different background color to posts that **have not yet been read**.
+*	Showing Unread Posts With WeakSets --> We can use _WeakSets_ to create special groups from existing objects **without mutating them**. Favoring **immutable** objects allow for much **simpler** code with **no unexpected side effects**.
 
