@@ -80,4 +80,10 @@
 
 *   _Maps_ are a **data structure** composed of a collection of **key/value** pairs. They are very useful to store simple data, such as property values.
 *   When using **Objects** as maps, its _keys_ are **always converted to strings**.
-*   The _Map_ object is a simple **key/value** data structure. Any value may bels
+*   The _Map_ object is a simple **key/value** data structure. Any value may be used as either a key or a value, and object are **not converted** to strings. 
+*   _Maps_ are iterable, so they can be used in a _for...of_ loop. Each run of the loops returns a **[key,value]** pair for an entry in the _Map_.
+*   The _WeakMap_ is a type of _Map_ where **only objects** can be passed as keys. Primitive data types -- such as strings,numbers,booleans, ets, -- are **not allowed**.
+*   Working with WeakMaps --> all available methods on a _WeakMap_ require access to an **object used as a key**.
+*   WeakMaps are better with memory --> Individual entries in a _WeakMap_ can be **garbage collected** while the _WeakMap_ itself still exists.
+
+
