@@ -129,6 +129,53 @@
 *	Using Class Modules with Named Export --> Another way to export classes is to first define them, and then used the _export_ statement with the class name inside curly braces. 
 *	Using Class Modules with Named Export --> When using named **export**, the script that loads the module needs to assign it to a variable with **the same name as the class**.
 
+# Level Six
+
+## 6.1 Promises
+
+*	Fetching Poll Results From the Server --> It's very importatnt to understand how to work with JavaScript's **single-thread model**. Otherwise, we might accidentally **freeze** the entire app, to the detriment of user experience. 
+*	Avoiding Code That Blocks --> Once the browser **blocks** executing a sript, it stops running other scripts, rendering elements, and responding to user events like keyboard and mouse interactions. 
+*	Passing Callbacks to Continue Execution --> In **continuation-passing style** (CPS) async programming, we tell a function how to continue execution by passing callbacks. It can grow to **complicate nested code**.
+*	The Best of Both Worlds With Promises --> A Promise is a new abstraction that allows us to write async code in an easier way.
+*	Creating a New Promise Object --> The Promise constructor function takes an anonymous function with 2 callback arguments known as **handlers**. 
+*	The Lifecycle of a Promise Object --> Creating a new Promise automatically sets it to the **pending** state. Then, it can do 1 of 2 things: become **fulfilled** or **rejected**.
+*	Returning a New Promise Object --> A Promise represents a **future value**, such as the eventual result of an **asynchronous** operation. 
+*	Resolving a Promise --> Let's wrap the _XMLHttpRequest_ object API within a Promise. Calling the _resolve()_ handler moves the Promise to a **fulfilled** state. 
+*	Reading Results From a Promise --> We can use the _then()_ method to read results from the Promise once it's resolved. This method takes a function that will only be invoked once the Promise is **resolved**.
+*	Removing Temporary Variables --> We are currently using a **temporary variable** to store our Promise object, but it's not really necassary. Let's replace it with **chaining function calls**.
+*	Rejecting a Promise --> We'll call the _reject()_ handler for **unsuccessful status codes** and also when the _onerror_ event is triggered on our request object. Both move the Promise to a **rejected state**.
+*	Catching Rejected Promises --> Once an error occurs, execution moves immediately to the _catch()_ function. None of the remaining _then()_ functions are invoked. 
+*	Passing Functions as Arguments --> We can make out code more succinct by passing function arguments to _then_, instead of using anonymous functions. 
+
+## 6.5 Iterators
+
+*	What We know About Iterables So far -- > Arrays are **iterable** objects, which means we can use them with _for..of_. Plain JavaScript objects are **not iterable**, so they **do not work** with _for...of_ out-of-th-box.
+*	Iterables Return Iterators --> Iterables return an **iterator** object. This object knows how to **access items from a collection** 1 at a time, while **keeping track of its current position** within the sequence.
+*	Understanding the next Method --> Each time _next()_ is called, it returns an object with 2 specific properties: _done_ and _value_.
+*	Here's how values from these 2 peoperties work: **done(boolean)** will be _false_ if the iterator is able to return a value from the collection. And will be _true_ if the iterator is past the end of the collection. **value(any)** any  value returned by the iterator. When _done_ is _true_, this returns _undefined_.
+*	The First Step Toward an Iterator Object --> An iterator is an object with a _next_ propert, returned by the result of calling the _Symbol.iterator_ method.
+*	Navigating the Sequence --> We can use _Object.keys_ to build an array with propery names for our object. We'll also use a counter(_count_) and a boolean flag (_isDone_) to help us navigate our collection. 
+*	Returning done and value --> We use _count_ to keep track of the sequence and also to fetch values from the _properties_ array. 
+*	Running Our Custom Iterator --> We've succesfully made our plain JavaScript object **iterable**, and it can now be used with _for...of_
+*	Iterables With the Spread Operator --> Objects that comply with the iterable protocal can also be used with the **spread operator**.
+*	Iterables with Destructuring --> Lastly, **destructuring** assignments will also work with iterables. 
+
+## 6.9 Generators
+
+*	Generator Functions --> The _function *_ declaration defines **generator functions**. These are special functions from which we can use the _yield_ keyword to return **iterator** objects.
+*	Generator Objects and _for...of_ --> Generator functions return objects that provide the same _next_ method expected by _for...of_, the _spread operator_, and the _destructuring assignment_.
+*	Replacing Manual Iterator Objects --> Knowing how to **manually** craft an iterator object is important, but there's a **shorter** syntax.
+*	Refactoring to Generator Functions --> Each time _yield_ is called, our function returns a **new iterator** object and then **pauses** until it's called again. 
+
+
+
+
+
+
+
+
+
+
 
 
 
