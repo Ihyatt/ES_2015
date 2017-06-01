@@ -42,7 +42,7 @@
 *   **Rest and Spread look the same**Rest parameters and the spread operator **look the same**, but the former is used in function **definitions** and the later in function **invocations**.
 *   **From functions to Objects** - JavaScript objects can help use with the **encapsulation, organization**, and **testability** of our code.
 *   The _TagComponent_ object **encapsulates** the code for fetching tags and adding them to a page.
-*   Anonymos functions passed as callback to other functions create **their own scope**.
+*   Anonymous functions passed as callback to other functions create **their own scope**.
 *   Arrow functions bind to the scope of where they are **defined**, not where they are used. (also knows as **lexical binding**)
 
 # Level Three
@@ -86,9 +86,7 @@
 *   Working with WeakMaps --> all available methods on a _WeakMap_ require access to an **object used as a key**.
 *   WeakMaps are better with memory --> Individual entries in a _WeakMap_ can be **garbage collected** while the _WeakMap_ itself still exists.
 
-# Level Five
-
-### 4.17 Sets
+## 4.17 Sets
 
 *	Limitations w/Arays --> Arrays don't enforce uniqueness of items. Duplicate entries are allowed
 *	Using Set --> The _Set_ object stores ***unique** values of **any type**, whether primitive values or object references
@@ -97,4 +95,44 @@
 *	Can't Read From a WeakSet --> _WeakSets_ **cannot** be used with _for..of_ and they offer **no** methods for reading values from it. 
 *	Using WeakSets to Show Unread Posts --> We want to add a different background color to posts that **have not yet been read**.
 *	Showing Unread Posts With WeakSets --> We can use _WeakSets_ to create special groups from existing objects **without mutating them**. Favoring **immutable** objects allow for much **simpler** code with **no unexpected side effects**.
+
+# Level Five
+
+## 5.1 Classes
+*	Using a Function Approach --> A common approach to encapsulation in JavaScript is using a **constructor function**
+*	Using the New Class Syntax --> To define a class, we use the _class_ keyword followed by the name of the class. The body of a class is the part between curly braces.
+*	Initializing Values in the Construcotr Functions --> The _constructor_ method is a special method for **creating and initializing** and object.
+*	Accessing Class Instance Variables --> Instance variables set on the _constructor_ method can be accessed from all other instance methods in the class.
+*	Creating an Instance From a Class --> The class syntax is not introducing a new object model to javaScript. It's just **syntatical sugar** over the existing **prototype-based** inheritance.
+*	Class Inheritance --> We can use inheritance to reduce code repitition. Child classes **inherit** and **specialize** behavior defined in parent classes.
+*	Using extends to Inherit From Base Class --> The _extends_ keyword is used to create a class that **inherits methods and properties** from another class. The _super_ methos runs the contructor function from the parent class. 
+*	Overriding Inherited Methods --> Child classes can invoke methods from their **parent** classes via the _super_ object.
+
+## 5.7 Modules Part I
+
+*	Polluting the Global Namespace --> The common solution for modularizing code relies on using **global variables**. This increases the chances of **unexpected side effects** and potential **naming conflicts**.
+*	Importing Modules With Default Export --> To import modules we use the _import_ keyword, specify a new local variable to hold its cntent, and use the _from_ keyword to tell the JavaScript engine where the module can be found.
+*	Running Code From Modules --> Modules still need to be imported via _<script></script>_, but no longer pollute the global namespace.
+*	The _default_ type export ***limits* the number of functions we can export from a module.
+*	Using Named Exports --> In order to **export multiple functions** from a single module, we can use **named** export.
+*	Importing Named Exorts --> Functions from **named** exports must be assigned to variables to **the same name** enclosed in curly braces.
+*	Importing a Module as an Object --> We can also **import the entire module** as an object and call each function as a **property** from this object.
+*	Exporting Multiple Functions at Once --> We can export multiple functions at once by passing them to _export_ inside curly braces.
+
+## 5.13 Modules - Part II
+
+*	Extracting Hardcoded Constants --> Redefining constants across out application is **unnecessary repetition** and can lead to **bugs**.
+*	Exporting Constants ---> Placing constants on their own module allos them to be reused across other modules and **hides implementation details** (aka, **encapsulation**).
+*	How to Import Constants --> to _import_ constants, we use the exact same syntax or importing functions. 
+*	Exporting Class Modules with Default Export --> Classes can also be exported from modules using the same syntax as functions. Instead of 2 individual functions, we now have **2 instance methods** that are part of a class. 
+*	Using Class Modules with Default Export --> Imported classes are assigned to a variable using _import_ and can be used to create **new instances**.
+*	Using Class Modules with Named Export --> Another way to export classes is to first define them, and then used the _export_ statement with the class name inside curly braces. 
+*	Using Class Modules with Named Export --> When using named **export**, the script that loads the module needs to assign it to a variable with **the same name as the class**.
+
+
+
+
+
+
+
 
